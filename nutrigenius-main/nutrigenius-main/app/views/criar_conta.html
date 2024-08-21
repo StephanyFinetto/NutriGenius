@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+  Cadastrar-se
+{% endblock %}
+
+{% block body %}
+    <form method="POST" action="" class="border p-4 m-4">
+        {{ form_criar_conta.csrf_token }}
+        <legend>Criar conta</legend>
+        <div class="form-group">
+            {{ form_criar_conta.nome.label }}
+            {% if form_criar_conta.nome.errors %}
+                {{ form_criar_conta.nome(class="form-control is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for erro in form_criar_conta.nome.errors %}
+                        {{ erro }}
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form_criar_conta.nome(class="form-control") }}
+            {% endif %}
+        </div>
+        <div class="form-group mt-2">
+            {{ form_criar_conta.email.label }}
+            {% if form_criar_conta.email.errors %}
+                {{ form_criar_conta.email(class="form-control is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for erro in form_criar_conta.email.errors %}
+                        {{ erro }}
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form_criar_conta.email(class="form-control") }}
+            {% endif %}
+        </div>
+        <div class="form-group mt-2">
+            {{ form_criar_conta.senha.label }}
+            {% if form_criar_conta.senha.errors %}
+                {{ form_criar_conta.senha(class="form-control is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for erro in form_criar_conta.senha.errors %}
+                        {{ erro }}
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form_criar_conta.senha(class="form-control") }}
+            {% endif %}
+        </div>
+        <div class="form-group mt-2">
+            {{ form_criar_conta.confirmacao.label }}
+            {% if form_criar_conta.confirmacao.errors %}
+                {{ form_criar_conta.confirmacao(class="form-control is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for erro in form_criar_conta.confirmacao.errors %}
+                        {{ erro }}
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form_criar_conta.confirmacao(class="form-control") }}
+            {% endif %}
+        </div>
+        {{ form_criar_conta.botao_submit_criar_conta(class="btn btn-primary mt-4") }}
+    </form>
+    {% include 'components/decorator.html' %}
+{% endblock %}
