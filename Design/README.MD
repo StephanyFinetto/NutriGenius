@@ -1,4 +1,4 @@
-# - Desing do projeto:
+# **- Desing do projeto:**
 
 ## **Link para acessar o design criado:**
 
@@ -17,7 +17,7 @@ A terceira tela mantém o nome do site no cabeçalho e oferece opções para cri
 Na quarta tela, o nome do site permanece no cabeçalho. Esta página exibe detalhadamente os ingredientes e a receita completa selecionada. No canto inferior esquerdo, uma imagem de legumes e verduras complementa visualmente a proposta saudável do site.
 
 
-## **Sites com mesmo tema/similares** 
+# - **Sites com mesmo tema/similares** 
 
 ## **Principais funcionalidades e recursos disponibilizados:** 
 
