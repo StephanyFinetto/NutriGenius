@@ -1,10 +1,10 @@
 # **- Desing do projeto:**
 
-## **Link para acessar o design criado:**
+## **Link para acessar o design:**
 
 https://www.canva.com/design/DAGGFX4MleA/9t7T3dgz_c2z5VQlTxJBLQ/edit?utm_content=DAGGFX4MleA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
 
-## **Descrição do design criado:**
+## **Descrição do design:**
 
 O site tem como objetivo criar receitas saudáveis com base na contagem de calorias, oferecendo uma plataforma onde os usuários podem descobrir e preparar refeições que atendam às suas necessidades nutricionais e metas de controle de peso.
 
