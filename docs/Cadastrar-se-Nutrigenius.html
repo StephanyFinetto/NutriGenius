@@ -75,6 +75,22 @@
         </div>
         <input class="btn btn-primary mt-4" id="botao_submit_criar_conta" name="botao_submit_criar_conta" type="submit" value="Criar conta">
     </form>
+    <script>
+        document.getElementById('criarContaForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            var form = document.getElementById('criarContaForm');
+            
+            // Verifica se o formulário está corretamente preenchido
+            if (form.checkValidity()) {
+                // Simula o envio bem-sucedido e redireciona para outra página
+                window.location.href = 'Ver-Receita.html'; // Substitua pelo caminho da sua página
+            } else {
+                // Exibe as mensagens de erro se o formulário estiver inválido
+                form.reportValidity();
+            }
+        });
+    </script>
     <div class="d-flex justify-content-center">
     <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/decoracao.png" class="decorator" alt="Descrição da imagem de decoração">
 </div>
