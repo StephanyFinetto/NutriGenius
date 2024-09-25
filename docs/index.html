@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adicionada a meta viewport -->
     <title>Página inicial - Nutrigenius</title>
     <link rel="icon" type="image/x-icon" href="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-colorido.svg">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
@@ -10,14 +11,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         /* Custom CSS */
+        body {
+            font-size: 1em;
+            padding: 0;
+            margin: 0;
+        }
         .container-conteudo {
-            padding: 40px;
+            padding: 20px; /* Reduzido o padding para telas pequenas */
         }
         .section-title {
             font-family: 'Luckiest Guy', cursive;
-            font-size: 2.5em;
+            font-size: 2em; /* Reduzido o tamanho da fonte para telas menores */
             color: #004080;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .main-image {
             max-width: 100%;
@@ -36,16 +42,34 @@
             background-color: #002a5c;
         }
         .banner-text {
-            font-size: 1.1em;
+            font-size: 1em; /* Diminuído o tamanho da fonte */
             color: #555;
         }
-        @media (max-width: 768px) {
-            /* Ajuste para telas menores */
-            .row {
-                flex-direction: column-reverse;
+
+        /* Layout Mobile First - estilos padrão para dispositivos móveis */
+        .navbar .navbar-toggler {
+            border: none;
+        }
+        .navbar .nav-link {
+            font-size: 1em;
+        }
+
+        /* Ajustes para telas maiores (tablets e desktops) */
+        @media (min-width: 768px) {
+            .container-conteudo {
+                padding: 40px;
             }
-            .main-image {
-                margin-bottom: 20px;
+            .section-title {
+                font-size: 2.5em;
+            }
+            .banner-text {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container-conteudo {
+                padding: 60px;
             }
         }
     </style>
