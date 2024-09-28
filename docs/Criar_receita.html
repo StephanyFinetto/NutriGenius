@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Barra de navegação -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
@@ -26,56 +27,41 @@
         </div>
     </nav>
 
+    <!-- Formulário de criação de receitas -->
     <div class="container my-4">
-        <form method="POST" action="Criar_receita.html" class="border p-4">
+        <form method="POST" action="Criar_receita.html" class="border p-4 rounded">
             <input id="csrf_token" name="csrf_token" type="hidden" value="TOKEN_AQUI">
             <fieldset>
                 <legend>Criar Receita</legend>
 
                 <!-- Ingredientes -->
-                <div class="form-group">
-                    <table class="form-control mb-2" id="ingredientes-0">
-                        <tr>
-                            <th><label for="ingredientes-0-ingrediente">Ingrediente</label></th>
-                            <td><input id="ingredientes-0-ingrediente" name="ingredientes-0-ingrediente" type="text"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="form-group">
-                    <table class="form-control mb-2" id="ingredientes-1">
-                        <tr>
-                            <th><label for="ingredientes-1-ingrediente">Ingrediente</label></th>
-                            <td><input id="ingredientes-1-ingrediente" name="ingredientes-1-ingrediente" type="text"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="form-group">
-                    <table class="form-control mb-2" id="ingredientes-2">
-                        <tr>
-                            <th><label for="ingredientes-2-ingrediente">Ingrediente</label></th>
-                            <td><input id="ingredientes-2-ingrediente" name="ingredientes-2-ingrediente" type="text"></td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <!-- Novo campo de ingrediente adicionado -->
-                <div class="form-group">
-                    <table class="form-control mb-2" id="ingredientes-3">
-                        <tr>
-                            <th><label for="ingredientes-3-ingrediente">Ingrediente</label></th>
-                            <td><input id="ingredientes-3-ingrediente" name="ingredientes-3-ingrediente" type="text"></td>
-                        </tr>
-                    </table>
+                <div id="ingredientes-list">
+                    <div class="form-group mb-3">
+                        <label for="ingredientes-0">Ingrediente 1</label>
+                        <input id="ingredientes-0" name="ingredientes-0" type="text" class="form-control" placeholder="Digite o ingrediente">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="ingredientes-1">Ingrediente 2</label>
+                        <input id="ingredientes-1" name="ingredientes-1" type="text" class="form-control" placeholder="Digite o ingrediente">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="ingredientes-2">Ingrediente 3</label>
+                        <input id="ingredientes-2" name="ingredientes-2" type="text" class="form-control" placeholder="Digite o ingrediente">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="ingredientes-3">Ingrediente 4</label>
+                        <input id="ingredientes-3" name="ingredientes-3" type="text" class="form-control" placeholder="Digite o ingrediente">
+                    </div>
                 </div>
 
                 <!-- Calorias -->
-                <div class="form-group mt-2">
+                <div class="form-group mb-3">
                     <label for="calorias">Calorias</label>
-                    <input class="form-control" id="calorias" name="calorias" type="number" step="any" min="0" required>
+                    <input class="form-control" id="calorias" name="calorias" type="number" step="any" min="0" required placeholder="Digite as calorias">
                 </div>
 
                 <!-- Botão de submissão -->
-                <input class="btn btn-primary mt-4" id="botao_submit_criar_receita" type="submit" value="Gerar Receita">
+                <button class="btn btn-primary mt-4" type="submit">Gerar Receita</button>
             </fieldset>
         </form>
 
@@ -101,11 +87,11 @@
         </ul>
         <h3>Modo de Preparo</h3>
         <ol>
-            <li>Lave bem a salsinha e pique finamente</li>
-            <li>Descasque e pique a cebola</li>
-            <li>Misture a salsinha e a cebola com o azeite de oliva</li>
-            <li>Tempere a gosto com sal e pimenta</li>
-            <li>Sirva imediatamente</li>
+            <li>Lave bem a salsinha e pique finamente.</li>
+            <li>Descasque e pique a cebola.</li>
+            <li>Misture a salsinha e a cebola com o azeite de oliva.</li>
+            <li>Tempere a gosto com sal e pimenta.</li>
+            <li>Sirva imediatamente.</li>
         </ol>
         <h3>Rendimento</h3>
         <p>1 porção</p>
