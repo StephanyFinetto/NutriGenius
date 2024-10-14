@@ -76,8 +76,8 @@
 
         /* Remover qualquer margem/padding ao redor da imagem em telas maiores */
         .col-md-6:last-child {
-            margin: 0; /* Remove a margem */
             padding: 0; /* Remove o padding */
+            margin: 0; /* Remove a margem */
         }
 
         /* Estilo para o botão CTA */
@@ -99,7 +99,7 @@
         .row {
             display: flex;
             flex-direction: column; /* Empilha os itens para telas pequenas */
-            gap: 20px;
+            gap: 20px; /* Espaçamento entre as colunas */
         }
 
         /* Em telas maiores, exibe o texto à esquerda e a imagem à direita */
@@ -118,12 +118,6 @@
                 align-items: flex-start; /* Alinha a imagem ao topo da coluna */
                 padding: 0; /* Remove o padding */
                 margin: 0; /* Remove a margem */
-            }
-
-            /* Para garantir que a imagem preencha a altura total da coluna */
-            .col-md-6:last-child img {
-                height: 100%; /* A imagem ocupará 100% da altura disponível */
-                object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorcer */
             }
         }
 
