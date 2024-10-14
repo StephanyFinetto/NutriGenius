@@ -88,30 +88,25 @@
             background-color: #002a5c;
         }
 
-        /* Grid Layout */
+        /* Layout flexível para organizar o texto e a imagem */
         .row {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column; /* Empilha os itens para telas pequenas */
             gap: 20px;
         }
 
-        .col-md-6 {
-            flex: 1;
-            min-width: 300px; /* Controle do layout mobile */
-        }
-
-        /* Em telas grandes (desktop), manter texto à esquerda e imagem à direita */
+        /* Em telas maiores, exibe o texto à esquerda e a imagem à direita */
         @media (min-width: 768px) {
+            .row {
+                flex-direction: row; /* Alinha os itens lado a lado */
+            }
+
             .col-md-6:first-child {
-                order: 1; /* Texto primeiro (esquerda) */
+                order: 1; /* Mantém o texto à esquerda */
             }
 
             .col-md-6:last-child {
-                order: 2; /* Imagem depois (direita) */
-            }
-
-            .row {
-                flex-direction: row; /* Alinhamento lado a lado */
+                order: 2; /* Mantém a imagem à direita */
             }
         }
 
