@@ -100,16 +100,22 @@
             min-width: 300px; /* Controle do layout mobile */
         }
 
-        /* Em telas grandes (desktop), inverter o layout */
+        /* Em telas grandes (desktop), manter texto à esquerda e imagem à direita */
         @media (min-width: 768px) {
             .col-md-6:first-child {
-                order: 1; /* Colocar o texto primeiro */
+                order: 1; /* Texto primeiro (esquerda) */
             }
+
             .col-md-6:last-child {
-                order: 2; /* Colocar a imagem à direita */
+                order: 2; /* Imagem depois (direita) */
+            }
+
+            .row {
+                flex-direction: row; /* Alinhamento lado a lado */
             }
         }
 
+        /* Estilos de centralização */
         .text-center {
             text-align: center;
         }
