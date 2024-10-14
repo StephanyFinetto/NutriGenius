@@ -104,6 +104,16 @@
             min-width: 300px; /* Controle do layout mobile */
         }
 
+        /* Em telas grandes (desktop), inverter o layout */
+        @media (min-width: 768px) {
+            .col-md-6:first-child {
+                order: 1; /* Colocar o texto primeiro */
+            }
+            .col-md-6:last-child {
+                order: 2; /* Colocar a imagem à direita */
+            }
+        }
+
         .text-center {
             text-align: center;
         }
@@ -149,6 +159,7 @@
 
     <div class="container-conteudo">
         <div class="row">
+            <!-- Texto -->
             <div class="col-md-6">
                 <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
                 <p class="banner-text">
@@ -160,6 +171,8 @@
                     em sua dieta.
                 </p>
             </div>
+
+            <!-- Imagem -->
             <div class="col-md-6 text-center">
                 <img class="main-image" src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/banner.jpg" alt="Imagem de Banner">
             </div>
