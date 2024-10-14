@@ -20,17 +20,13 @@
         nav {
             background-color: #f8f9fa;
             padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         nav img {
             vertical-align: middle;
-        }
-
-        .navbar-toggler {
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
         }
 
         .navbar-collapse {
@@ -146,14 +142,11 @@
 </head>
 <body>
     <nav>
-        <div class="container-fluid">
-            <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
-            <button class="navbar-toggler" onclick="toggleMenu()">&#9776;</button>
-            <div id="navbarNav" class="navbar-collapse">
-                <a class="nav-link" href="Login-Nutrigenius.html">Login</a>
-                <a class="nav-link" href="Cadastrar-se-Nutrigenius.html">Criar conta</a>
-                <a class="nav-link" href="Criar_receita.html">Criar Receita</a>
-            </div>
+        <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
+        <div class="navbar-collapse">
+            <a class="nav-link" href="Login-Nutrigenius.html">Login</a>
+            <a class="nav-link" href="Cadastrar-se-Nutrigenius.html">Criar conta</a>
+            <a class="nav-link" href="Criar_receita.html">Criar Receita</a>
         </div>
     </nav>
 
@@ -182,16 +175,5 @@
     <div class="text-center">
         <a class="cta-button" href="Cadastrar-se-Nutrigenius.html">Quero conhecer</a>
     </div>
-
-    <script>
-        function toggleMenu() {
-            const nav = document.getElementById('navbarNav');
-            if (nav.style.display === "flex") {
-                nav.style.display = "none";
-            } else {
-                nav.style.display = "flex";
-            }
-        }
-    </script>
 </body>
 </html>
