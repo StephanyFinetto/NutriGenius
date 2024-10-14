@@ -72,7 +72,6 @@
             height: auto;
             border-radius: 10px;
             object-fit: cover; /* Garante que a imagem seja cortada para preencher o espaço sem distorção */
-            display: block;
         }
 
         /* Remover qualquer margem/padding ao redor da imagem em telas maiores */
@@ -116,9 +115,15 @@
             .col-md-6:last-child {
                 order: 2; /* Mantém a imagem à direita */
                 display: flex;
-                align-items: flex-end;
+                align-items: flex-start; /* Alinha a imagem ao topo da coluna */
                 padding: 0; /* Remove o padding */
                 margin: 0; /* Remove a margem */
+            }
+
+            /* Para garantir que a imagem preencha a altura total da coluna */
+            .col-md-6:last-child img {
+                height: 100%; /* A imagem ocupará 100% da altura disponível */
+                object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorcer */
             }
         }
 
