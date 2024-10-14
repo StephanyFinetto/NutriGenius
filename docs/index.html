@@ -67,9 +67,17 @@
 
         /* Imagem principal */
         .main-image {
-            max-width: 100%;
+            width: 100%; /* Garante que a imagem ocupe toda a largura da coluna */
             height: auto;
             border-radius: 10px;
+            object-fit: cover; /* Garante que a imagem seja cortada para preencher o espaço sem distorção */
+            display: block;
+        }
+
+        /* Remover qualquer margem/padding ao redor da imagem em telas maiores */
+        .col-md-6:last-child {
+            margin: 0;
+            padding: 0;
         }
 
         /* Estilo para o botão CTA */
@@ -107,6 +115,13 @@
 
             .col-md-6:last-child {
                 order: 2; /* Mantém a imagem à direita */
+            }
+
+            /* A imagem preenche toda a altura e largura */
+            .col-md-6:last-child {
+                display: flex;
+                align-items: flex-end;
+                padding: 0;
             }
         }
 
