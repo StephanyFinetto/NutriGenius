@@ -93,6 +93,17 @@
             background-color: #f0f0f0; /* Fundo suave para itens da lista */
             border-radius: 5px; /* Cantos arredondados para itens da lista */
         }
+
+        .recipe-link {
+            text-decoration: none; /* Remove sublinhado dos links */
+            color: #004080; /* Cor dos links para parecerem botões */
+            font-weight: bold; /* Negrito nos títulos das receitas */
+            font-size: 1.2em; /* Tamanho da fonte dos títulos */
+        }
+
+        .recipe-link:hover {
+            color: #0066cc; /* Cor ao passar o mouse */
+        }
     </style>
 </head>
 <body>
@@ -101,8 +112,8 @@
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
         </a>
         <div class="navbar-collapse">
-            <a class="nav-link" href="Ver-Receita.html">Receitas</a>
-            <a class="nav-link" href="index.html">Sair</a> <!-- Link modificado -->
+            <a class="nav-link" href="MinhasReceitas.html">Receitas</a>
+            <a class="nav-link" href="index.html">Sair</a>
         </div>
     </nav>
 
@@ -113,10 +124,10 @@
             <h5 class="card-header">Receitas Cadastradas</h5>
             <div class="card-body">
                 <ul>
-                    <li>Salada Energética com Salsinha</li>
-                    <li>Frango Grelhado com Legumes</li>
-                    <li>Arroz Integral com Brócolis</li>
-                    <li>Sopa de Lentilha</li>
+                    <li><a class="recipe-link" href="Ver-Receita.html?id=1">Salada Energética com Salsinha</a></li>
+                    <li><a class="recipe-link" href="Ver-Receita.html?id=2">Frango Grelhado com Legumes</a></li>
+                    <li><a class="recipe-link" href="Ver-Receita.html?id=3">Arroz Integral com Brócolis</a></li>
+                    <li><a class="recipe-link" href="Ver-Receita.html?id=4">Sopa de Lentilha</a></li>
                 </ul>
             </div>
         </div>
