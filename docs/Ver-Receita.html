@@ -93,6 +93,25 @@
             gap: 10px; /* Espaçamento entre os botões */
             margin-top: 20px; /* Espaço acima */
         }
+
+        .btn {
+            background-color: #007bff; /* Cor do fundo do botão */
+            color: white; /* Cor do texto do botão */
+            border: none; /* Sem borda */
+            padding: 10px 15px; /* Espaçamento interno */
+            border-radius: 5px; /* Cantos arredondados */
+            cursor: pointer; /* Muda o cursor ao passar por cima */
+            text-decoration: none; /* Remove sublinhado do link */
+            font-size: 1em; /* Tamanho da fonte dos botões */
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Cor do fundo do botão de exclusão */
+        }
+
+        .btn:hover {
+            opacity: 0.8; /* Efeito de hover para todos os botões */
+        }
     </style>
 </head>
 <body>
@@ -158,7 +177,7 @@
         </div>
 
         <div class="d-flex">
-            <a href="http://127.0.0.1:5000/dashboard" class="btn btn-secondary">
+            <a href="http://127.0.0.1:5000/dashboard" class="btn">
                 <i class="fa-solid fa-left-long"></i> Voltar
             </a>
             <a href="http://127.0.0.1:5000/excluir-receita/3" class="btn btn-danger">
