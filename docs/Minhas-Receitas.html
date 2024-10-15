@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Receitas - Nutrigenius</title>
+    <link rel="icon" type="image/x-icon" href="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-colorido.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> <!-- Fonte do título -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet"> <!-- Fonte para subtítulos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        body {
+            font-size: 1em;
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif; /* Fonte padrão para o corpo */
+            background-color: #f8f9fa; /* Fundo suave */
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            vertical-align: middle;
+        }
+
+        .navbar-collapse {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-size: 1em; /* Mesma fonte que o corpo do texto */
+            color: #333;
+            margin-left: 20px;
+            font-family: Arial, sans-serif; /* Garantindo a mesma fonte dos textos */
+        }
+
+        .nav-link:hover {
+            color: #004080;
+        }
+
+        /* Container principal */
+        .container-conteudo {
+            padding: 20px; /* Espaçamento ao redor do container */
+            max-width: 700px; /* Largura máxima do container */
+            margin: 20px auto; /* Centraliza o container na tela */
+            background-color: white; /* Fundo branco */
+            border-radius: 10px; /* Cantos arredondados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        h1 {
+            text-align: center;
+            color: #004080; /* Cor do título */
+            font-family: 'Luckiest Guy', cursive; /* Fonte do título das receitas */
+            font-size: 2.5em; /* Tamanho do título */
+        }
+
+        h5 {
+            font-family: 'Lora', serif; /* Fonte Lora para subtítulos */
+            font-size: 1.2em; /* Tamanho da fonte dos subtítulos */
+            color: black; /* Cor dos subtítulos em preto */
+            margin-top: 20px; /* Espaçamento acima dos subtítulos */
+            margin-bottom: 5px; /* Espaçamento abaixo dos subtítulos reduzido */
+        }
+
+        .card {
+            margin-top: 20px;
+        }
+
+        .card-header {
+            background-color: #e9ecef; /* Fundo claro para o cabeçalho do card */
+            font-weight: bold; /* Negrito no cabeçalho do card */
+        }
+
+        ul {
+            list-style-type: none; /* Remove marcadores da lista */
+            padding-left: 0; /* Remove recuo da lista */
+        }
+
+        li {
+            margin: 10px 0; /* Espaçamento entre itens da lista */
+            padding: 10px; /* Espaçamento interno */
+            background-color: #f0f0f0; /* Fundo suave para itens da lista */
+            border-radius: 5px; /* Cantos arredondados para itens da lista */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">
+            <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
+        </a>
+        <div class="navbar-collapse">
+            <a class="nav-link" href="Ver-Receita.html">Receitas</a>
+            <a class="nav-link" href="index.html">Sair</a> <!-- Link modificado -->
+        </div>
+    </nav>
+
+    <div class="container-conteudo">
+        <h1>Minhas Receitas</h1>
+
+        <div class="card">
+            <h5 class="card-header">Receitas Cadastradas</h5>
+            <div class="card-body">
+                <ul>
+                    <li>Salada Energética com Salsinha</li>
+                    <li>Frango Grelhado com Legumes</li>
+                    <li>Arroz Integral com Brócolis</li>
+                    <li>Sopa de Lentilha</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
