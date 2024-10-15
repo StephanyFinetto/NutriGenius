@@ -119,6 +119,8 @@
             margin-top: 20px; /* Espaço acima da imagem decorativa */
             max-width: 100%; /* Largura máxima */
             height: auto; /* Mantém a proporção */
+            display: flex;
+            justify-content: center; /* Centraliza a imagem */
         }
 
         /* Layout flexível para organizar o texto e a imagem */
@@ -130,12 +132,6 @@
             .form-container {
                 flex-basis: 50%; /* O formulário ocupa 50% da largura */
                 padding-right: 20px; /* Adiciona um espaço à direita do formulário */
-            }
-
-            .decorator {
-                flex-basis: 50%; /* A imagem ocupa 50% da largura */
-                display: flex;
-                justify-content: flex-end; /* Faz a imagem colar à direita */
             }
         }
     </style>
@@ -173,7 +169,8 @@
             </form>
         </div>
 
-        <div class="decorator text-center">
+        <!-- Imagem decorativa abaixo do formulário -->
+        <div class="decorator">
             <img src="decoracao.png" class="decorator" alt="Decoração">
         </div>
     </div>
