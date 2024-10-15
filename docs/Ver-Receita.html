@@ -72,12 +72,6 @@
             margin-bottom: 5px; /* Espaçamento abaixo dos subtítulos reduzido */
         }
 
-        .calorias {
-            text-align: center;
-            font-size: 1.5em; /* Aumentando o tamanho da fonte das calorias */
-            margin-top: 10px; /* Espaçamento acima do valor de calorias */
-        }
-
         .card {
             margin-top: 20px;
         }
@@ -111,6 +105,19 @@
 
         .btn:hover {
             opacity: 0.8; /* Efeito de hover para todos os botões */
+        }
+
+        .calorias {
+            font-size: 1.5em; /* Aumentando o tamanho da fonte das calorias */
+            color: black; /* Cor preta para o texto */
+            margin-top: 10px; /* Espaçamento acima do valor de calorias */
+            margin-bottom: 0; /* Remove margem inferior para ficar próximo ao texto */
+        }
+
+        .calorias-wrapper {
+            display: flex;
+            justify-content: space-between; /* Para alinhar o texto à esquerda */
+            align-items: center; /* Alinha verticalmente */
         }
     </style>
 </head>
@@ -170,9 +177,9 @@
         <div class="card mt-4">
             <h5 class="card-header">Calorias</h5>
             <div class="card-body">
-                <ul>
-                    <li class="calorias">1000.0</li>
-                </ul>
+                <div class="calorias-wrapper">
+                    <span class="calorias">1000.0</span>
+                </div>
             </div>
         </div>
 
