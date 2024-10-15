@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salada Energética com Salsinha - Nutrigenius</title>
     <link rel="icon" type="image/x-icon" href="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-colorido.svg">
@@ -51,37 +50,54 @@
         /* Container principal */
         .container-conteudo {
             padding: 20px; /* Espaçamento ao redor do container */
-            max-width: 800px; /* Definindo largura máxima do container do formulário */
+            max-width: 700px; /* Largura máxima do container */
             margin: 20px auto; /* Centraliza o container na tela */
-        }
-
-        /* Cartões */
-        .card {
-            background-color: white; /* Fundo branco para o cartão */
+            background-color: white; /* Fundo branco */
             border-radius: 10px; /* Cantos arredondados */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-            margin-bottom: 20px; /* Espaçamento entre os cartões */
         }
 
         h1 {
-            font-family: 'Luckiest Guy', cursive;
+            text-align: center;
             color: #004080; /* Cor do título */
-            text-align: center; /* Centraliza o título */
-            margin: 20px 0; /* Margens superior e inferior */
         }
 
-        h5 {
-            background-color: #f8f9fa; /* Fundo do cabeçalho do cartão */
-            padding: 10px; /* Espaçamento interno */
-            border-top-left-radius: 10px; /* Cantos arredondados superiores */
-            border-top-right-radius: 10px; /* Cantos arredondados superiores */
+        .calorias {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 20px; /* Espaçamento abaixo do texto de calorias */
         }
 
-        /* Estilos do rodapé */
+        .card {
+            margin-top: 20px;
+        }
+
+        .card-header {
+            background-color: #e9ecef; /* Fundo claro para o cabeçalho do card */
+            font-weight: bold; /* Negrito no cabeçalho do card */
+        }
+
+        .d-flex {
+            display: flex; /* Flex para alinhar os botões e texto */
+            justify-content: flex-end; /* Alinha os botões à direita */
+            gap: 10px; /* Espaçamento entre os botões */
+            margin-top: 20px; /* Espaço acima */
+        }
+
         footer {
-            background-color: #f8f9fa;
-            padding: 10px 20px;
-            margin-top: 20px; /* Espaço acima do rodapé */
+            margin-top: 30px; /* Espaço acima do footer */
+            padding: 20px 0; /* Espaçamento interno */
+            border-top: 1px solid #e9ecef; /* Linha de separação acima do footer */
+            text-align: center; /* Alinhamento central no footer */
+        }
+
+        footer a {
+            color: #333; /* Cor dos links do footer */
+            text-decoration: none; /* Remove sublinhado dos links */
+        }
+
+        footer a:hover {
+            color: #004080; /* Cor ao passar o mouse */
         }
     </style>
 </head>
@@ -98,7 +114,7 @@
 
     <div class="container-conteudo">
         <h1>Salada Energética com Salsinha</h1>
-        <p class="text-center">1000.0 calorias</p>
+        <p class="calorias">1000.0 calorias</p>
 
         <div class="card">
             <h5 class="card-header">Ingredientes</h5>
@@ -116,7 +132,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card mt-4">
             <h5 class="card-header">Modo de Preparo</h5>
             <div class="card-body">
                 <ol>
@@ -130,14 +146,14 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card mt-4">
             <h5 class="card-header">Rendimento</h5>
             <div class="card-body">
                 <p class="card-text">2 porções</p>
             </div>
         </div>
 
-        <div class="d-flex justify-content-end p-4 gap-2">
+        <div class="d-flex">
             <a href="http://127.0.0.1:5000/dashboard" class="btn btn-secondary">
                 <i class="fa-solid fa-left-long"></i> Voltar
             </a>
@@ -147,14 +163,14 @@
         </div>
     </div>
 
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-        <p class="col-md-4 mb-0 text-muted">© 2024 <span class="brand">Nutrigenius</span></p>
+    <footer>
+        <p class="mb-0 text-muted">© 2024 <span class="brand">Nutrigenius</span></p>
 
-        <a href="http://127.0.0.1:5000/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <a href="http://127.0.0.1:5000/" class="d-flex align-items-center justify-content-center link-dark text-decoration-none">
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-colorido.svg" width="35" alt="Descrição da imagem">
         </a>
 
-        <ul class="nav col-md-4 justify-content-end">
+        <ul class="nav justify-content-center mt-3">
             <li class="nav-item"><a href="Ver-Receita.html" class="nav-link px-2 text-muted">Minhas receitas</a></li>
             <li class="nav-item"><a href="Criar_receita.html" class="nav-link px-2 text-muted">Criar receita</a></li>
         </ul>
