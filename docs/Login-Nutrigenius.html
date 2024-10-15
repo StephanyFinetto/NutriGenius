@@ -52,9 +52,6 @@
             padding: 20px;
             max-width: 1200px;
             margin: 80px auto; /* Margem superior para afastar do navbar */
-            display: flex;
-            flex-direction: column; /* Empilha os itens para telas pequenas */
-            gap: 20px; /* Espaçamento entre os elementos */
         }
 
         /* Estilos do formulário */
@@ -63,7 +60,6 @@
             border-radius: 10px; /* Cantos arredondados */
             padding: 40px; /* Espaçamento interno */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-            flex: 1; /* Permite que o formulário ocupe espaço */
         }
 
         legend {
@@ -119,14 +115,15 @@
             margin-top: 20px; /* Espaço acima da imagem decorativa */
             max-width: 100%; /* Largura máxima */
             height: auto; /* Mantém a proporção */
-            display: flex;
-            justify-content: center; /* Centraliza a imagem */
+            display: block; /* Garante que a imagem se comporte como um bloco */
+            margin: 20px auto; /* Centraliza a imagem e adiciona margens */
         }
 
         /* Layout flexível para organizar o texto e a imagem */
         @media (min-width: 768px) {
             .container-conteudo {
-                flex-direction: row; /* Alinha os itens lado a lado */
+                display: flex; /* Exibe o container como flex */
+                flex-direction: column; /* Empilha os itens verticalmente */
             }
 
             .form-container {
@@ -170,9 +167,7 @@
         </div>
 
         <!-- Imagem decorativa abaixo do formulário -->
-        <div class="decorator">
-            <img src="decoracao.png" class="decorator" alt="Decoração">
-        </div>
+        <img src="decoracao.png" class="decorator" alt="Decoração">
     </div>
 </body>
 </html>
