@@ -108,16 +108,21 @@
         }
 
         .calorias {
-            font-size: 1.5em; /* Aumentando o tamanho da fonte das calorias */
+            font-size: 1em; /* Mesma fonte que o corpo do texto */
             color: black; /* Cor preta para o texto */
-            margin-top: 10px; /* Espaçamento acima do valor de calorias */
-            margin-bottom: 0; /* Remove margem inferior para ficar próximo ao texto */
+            margin: 0; /* Remove margens */
+            padding: 0; /* Remove padding */
         }
 
         .calorias-wrapper {
             display: flex;
-            justify-content: space-between; /* Para alinhar o texto à esquerda */
+            justify-content: flex-start; /* Para alinhar o texto à esquerda */
             align-items: center; /* Alinha verticalmente */
+        }
+
+        .calorias-wrapper ul {
+            list-style-type: none; /* Remove marcadores da lista */
+            padding: 0; /* Remove padding da lista */
         }
     </style>
 </head>
@@ -177,9 +182,9 @@
         <div class="card mt-4">
             <h5 class="card-header">Calorias</h5>
             <div class="card-body">
-                <div class="calorias-wrapper">
-                    <span class="calorias">1000.0</span>
-                </div>
+                <ul>
+                    <li class="calorias">1000.0</li>
+                </ul>
             </div>
         </div>
 
