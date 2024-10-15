@@ -75,12 +75,6 @@
             object-fit: cover; /* Garante que a imagem seja cortada para preencher o espaço sem distorção */
         }
 
-        /* Remover qualquer margem/padding ao redor da imagem em telas maiores */
-        .col-md-6:last-child {
-            padding: 0; /* Remove o padding */
-            margin: 0; /* Remove a margem */
-        }
-
         /* Estilo para o botão CTA */
         .cta-button {
             background-color: #004080;
@@ -103,21 +97,21 @@
             gap: 20px; /* Espaçamento entre as colunas */
         }
 
-        /* Em telas maiores, exibe o texto à esquerda e a imagem à direita */
+        /* Em telas maiores, exibe o texto à direita e a imagem à esquerda */
         @media (min-width: 768px) {
             .row {
                 flex-direction: row; /* Alinha os itens lado a lado */
             }
 
             .col-md-6:first-child {
-                order: 1; /* Mantém o texto à esquerda */
-                padding-right: 20px; /* Adiciona um espaço à direita do texto */
+                order: 1; /* Mantém o texto à direita */
+                padding-left: 20px; /* Adiciona um espaço à esquerda do texto */
             }
 
             .col-md-6:last-child {
-                order: 2; /* Mantém a imagem à direita */
+                order: 2; /* Mantém a imagem à esquerda */
                 display: flex;
-                justify-content: flex-end; /* Faz a imagem colar à direita */
+                justify-content: flex-start; /* Faz a imagem colar à esquerda */
                 padding: 0; /* Remove o padding */
                 margin: 0; /* Remove a margem */
             }
@@ -166,6 +160,11 @@
 
     <div class="container-conteudo">
         <div class="row">
+            <!-- Imagem -->
+            <div class="col-md-6 text-center">
+                <img class="main-image" src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/banner.jpg" alt="Imagem de Banner">
+            </div>
+
             <!-- Texto -->
             <div class="col-md-6">
                 <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
@@ -180,11 +179,6 @@
                 <div class="text-center">
                     <a class="cta-button" href="Cadastrar-se-Nutrigenius.html">Quero conhecer</a>
                 </div>
-            </div>
-
-            <!-- Imagem -->
-            <div class="col-md-6 text-center">
-                <img class="main-image" src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/banner.jpg" alt="Imagem de Banner">
             </div>
         </div>
     </div>
