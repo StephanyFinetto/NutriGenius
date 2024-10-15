@@ -51,10 +51,6 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: calc(100vh - 60px); /* Altura total da tela menos o tamanho da navbar */
         }
 
         /* Título e conteúdo */
@@ -63,12 +59,14 @@
             font-size: 2em;
             color: #004080;
             margin-bottom: 15px;
+            margin-top: 30px; /* Espaço extra acima do título */
         }
 
         .banner-text {
             font-size: 1em;
             color: #555;
             margin-bottom: 20px; /* Margem abaixo do texto */
+            margin-top: 20px; /* Espaço extra acima do texto */
         }
 
         /* Imagem principal */
@@ -101,23 +99,23 @@
             gap: 20px; /* Espaçamento entre as colunas */
         }
 
-        /* Alinhando o conteúdo no meio da esquerda */
-        .col-md-6:first-child {
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Centraliza verticalmente */
-            padding-right: 20px; /* Espaço à direita */
-        }
-
         /* Em telas maiores, exibe o texto à esquerda e a imagem à direita */
         @media (min-width: 768px) {
             .row {
                 flex-direction: row; /* Alinha os itens lado a lado */
             }
 
+            .col-md-6:first-child {
+                order: 1; /* Mantém o texto à esquerda */
+                padding-right: 20px; /* Adiciona um espaço à direita do texto */
+            }
+
             .col-md-6:last-child {
+                order: 2; /* Mantém a imagem à direita */
                 display: flex;
-                justify-content: flex-end; /* Coloca a imagem à direita */
+                justify-content: flex-start; /* Faz a imagem colar à direita */
+                padding: 0; /* Remove o padding */
+                margin: 0; /* Remove a margem */
             }
         }
 
