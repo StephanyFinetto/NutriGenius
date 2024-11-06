@@ -14,4 +14,9 @@ Dicas de Substituições: Sugestões de ingredientes alternativos para mais vari
 Insira os Ingredientes: Informe os ingredientes disponíveis em casa.
 Explore as Receitas: O NutriGenius apresenta receitas ajustadas ao seu perfil.
 
+👥 Equipe
+Stephany Finetto
+Layane Teixeira
+Livia Oliveira
+
 Aproveite o NutriGenius e torne sua alimentação mais prática e saudável! 🥗
