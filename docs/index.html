@@ -148,9 +148,9 @@
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
         </a>
         <div class="navbar-collapse">
-            <a class="nav-link" href="#" onclick="loadContent('login')">Login</a>
-            <a class="nav-link" href="#" onclick="loadContent('signup')">Criar conta</a>
-            <a class="nav-link" href="#" onclick="loadContent('createRecipe')">Criar Receita</a>
+            <a class="nav-link" href="#" onclick="loadContent('login.html')">Login</a>
+            <a class="nav-link" href="#" onclick="loadContent('signup.html')">Criar conta</a>
+            <a class="nav-link" href="#" onclick="loadContent('createRecipe.html')">Criar Receita</a>
         </div>
     </nav>
 
@@ -168,7 +168,7 @@
                     em sua dieta.
                 </p>
                 <div class="text-center">
-                    <a class="cta-button" href="#" onclick="loadContent('signup')">Quero conhecer</a>
+                    <a class="cta-button" href="#" onclick="loadContent('signup.html')">Quero conhecer</a>
                 </div>
             </div>
             <div class="col-md-6 text-center">
@@ -177,42 +177,19 @@
         </div>
     </div>
 
-    <!-- Script de navegação com carregamento dinâmico -->
+    <!-- Script de navegação com AJAX -->
     <script>
         function loadContent(page) {
-            const content = {
-                home: `
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
-                            <p class="banner-text">Nutrigenius é o aplicativo inovador que transforma sua experiência culinária em uma jornada de saúde e bem-estar...</p>
-                            <div class="text-center">
-                                <a class="cta-button" href="#" onclick="loadContent('signup')">Quero conhecer</a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <img class="main-image" src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/banner.jpg" alt="Imagem de Banner">
-                        </div>
-                    </div>
-                `,
-                login: `
-                    <h1 class="section-title">Login</h1>
-                    <p class="banner-text">Faça login para acessar suas receitas e preferências.</p>
-                    <!-- Formulário de Login -->
-                `,
-                signup: `
-                    <h1 class="section-title">Criar Conta</h1>
-                    <p class="banner-text">Crie uma conta para aproveitar todos os benefícios do Nutrigenius.</p>
-                    <!-- Formulário de Cadastro -->
-                `,
-                createRecipe: `
-                    <h1 class="section-title">Criar Receita</h1>
-                    <p class="banner-text">Informe os ingredientes e calorias para gerar uma receita personalizada.</p>
-                    <!-- Formulário de Criação de Receita -->
-                `
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', page, true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    document.getElementById('main-content').innerHTML = xhr.responseText;
+                } else {
+                    console.error('Erro ao carregar o conteúdo da página:', xhr.status);
+                }
             };
-
-            document.getElementById('main-content').innerHTML = content[page];
+            xhr.send();
         }
     </script>
 </body>
