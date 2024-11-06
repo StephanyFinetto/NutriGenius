@@ -1,4 +1,5 @@
 NutriGenius 🍏
+
 NutriGenius é um aplicativo criado para facilitar a vida de quem quer se alimentar bem! Com ele, você consegue preparar refeições saudáveis usando os ingredientes que já tem em casa e mantendo-se dentro do seu limite calórico.
 
 📋 Sobre
