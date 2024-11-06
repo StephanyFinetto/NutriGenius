@@ -8,11 +8,141 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Mantendo todo o seu CSS original */
+        /* Mantendo o CSS original conforme solicitado */
+        body {
+            font-size: 1em;
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            vertical-align: middle;
+        }
+
+        .navbar-collapse {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-size: 1em;
+            color: #333;
+            margin-left: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .nav-link:hover {
+            color: #004080;
+        }
+
+        .container-conteudo {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 2em;
+            color: #004080;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        .banner-text {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .cta-button {
+            background-color: #004080;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #002a5c;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .row {
+                flex-direction: row;
+            }
+
+            .col-md-6:first-child {
+                order: 1;
+                padding-right: 20px;
+            }
+
+            .col-md-6:last-child {
+                order: 2;
+                display: flex;
+                justify-content: flex-start;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .container-conteudo {
+                padding: 40px;
+            }
+
+            .section-title {
+                font-size: 2.5em;
+            }
+
+            .banner-text {
+                font-size: 1.1em;
+            }
+
+            .col-md-6 {
+                flex-basis: 50%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container-conteudo {
+                padding: 60px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Navbar mantida -->
+
     <nav>
         <a href="#" onclick="loadContent('home')">
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
@@ -24,9 +154,8 @@
         </div>
     </nav>
 
-    <!-- Conteúdo principal onde as páginas serão carregadas -->
     <div id="main-content" class="container-conteudo">
-        <!-- Conteúdo inicial da página principal -->
+        <!-- Conteúdo da página principal carregado inicialmente -->
         <div class="row">
             <div class="col-md-6">
                 <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
@@ -48,7 +177,7 @@
         </div>
     </div>
 
-    <!-- JavaScript para carregar o conteúdo das páginas -->
+    <!-- Script de navegação com carregamento dinâmico -->
     <script>
         function loadContent(page) {
             const content = {
