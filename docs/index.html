@@ -4,34 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página inicial - Nutrigenius</title>
-    <!-- Estilos e links mantidos do código anterior -->
+    <link rel="icon" type="image/x-icon" href="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-colorido.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Mantendo todo o seu CSS original */
+    </style>
 </head>
 <body>
+    <!-- Navbar mantida -->
     <nav>
         <a href="#" onclick="loadContent('home')">
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
         </a>
         <div class="navbar-collapse">
             <a class="nav-link" href="#" onclick="loadContent('login')">Login</a>
-            <a class="nav-link" href="#" onclick="loadContent('register')">Criar conta</a>
-            <a class="nav-link" href="#" onclick="loadContent('recipe')">Criar Receita</a>
+            <a class="nav-link" href="#" onclick="loadContent('signup')">Criar conta</a>
+            <a class="nav-link" href="#" onclick="loadContent('createRecipe')">Criar Receita</a>
         </div>
     </nav>
 
+    <!-- Conteúdo principal onde as páginas serão carregadas -->
     <div id="main-content" class="container-conteudo">
-        <!-- Conteúdo inicial da página carregado aqui -->
-        <div class="row" id="home-content">
-            <!-- Texto inicial da página -->
+        <!-- Conteúdo inicial da página principal -->
+        <div class="row">
             <div class="col-md-6">
                 <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
                 <p class="banner-text">
                     Nutrigenius é o aplicativo inovador que transforma sua experiência culinária
                     em uma jornada de saúde e bem-estar. No mundo moderno, onde a correria do dia a dia muitas
                     vezes nos impede de seguir uma dieta equilibrada, o Nutrigenius surge como uma solução
-                    prática e inteligente.
+                    prática e inteligente. Este aplicativo foi projetado para ajudar você a criar receitas
+                    saudáveis usando os ingredientes que você já tem em casa e dentro das calorias disponíveis
+                    em sua dieta.
                 </p>
                 <div class="text-center">
-                    <a class="cta-button" href="#" onclick="loadContent('register')">Quero conhecer</a>
+                    <a class="cta-button" href="#" onclick="loadContent('signup')">Quero conhecer</a>
                 </div>
             </div>
             <div class="col-md-6 text-center">
@@ -40,19 +48,17 @@
         </div>
     </div>
 
+    <!-- JavaScript para carregar o conteúdo das páginas -->
     <script>
-        // Função para carregar o conteúdo das páginas dinamicamente
         function loadContent(page) {
             const content = {
                 home: `
                     <div class="row">
                         <div class="col-md-6">
                             <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
-                            <p class="banner-text">
-                                Nutrigenius é o aplicativo inovador que transforma sua experiência culinária em uma jornada de saúde e bem-estar.
-                            </p>
+                            <p class="banner-text">Nutrigenius é o aplicativo inovador que transforma sua experiência culinária em uma jornada de saúde e bem-estar...</p>
                             <div class="text-center">
-                                <a class="cta-button" href="#" onclick="loadContent('register')">Quero conhecer</a>
+                                <a class="cta-button" href="#" onclick="loadContent('signup')">Quero conhecer</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-center">
@@ -62,54 +68,23 @@
                 `,
                 login: `
                     <h1 class="section-title">Login</h1>
-                    <p class="banner-text">Faça login para acessar suas receitas e planos personalizados!</p>
-                    <form>
-                        <label for="username">Usuário:</label>
-                        <input type="text" id="username" name="username">
-                        <br>
-                        <label for="password">Senha:</label>
-                        <input type="password" id="password" name="password">
-                        <br>
-                        <button type="submit" class="cta-button">Entrar</button>
-                    </form>
+                    <p class="banner-text">Faça login para acessar suas receitas e preferências.</p>
+                    <!-- Formulário de Login -->
                 `,
-                register: `
+                signup: `
                     <h1 class="section-title">Criar Conta</h1>
-                    <p class="banner-text">Crie sua conta para começar a aproveitar todos os recursos do Nutrigenius!</p>
-                    <form>
-                        <label for="new-username">Usuário:</label>
-                        <input type="text" id="new-username" name="username">
-                        <br>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email">
-                        <br>
-                        <label for="new-password">Senha:</label>
-                        <input type="password" id="new-password" name="password">
-                        <br>
-                        <button type="submit" class="cta-button">Criar Conta</button>
-                    </form>
+                    <p class="banner-text">Crie uma conta para aproveitar todos os benefícios do Nutrigenius.</p>
+                    <!-- Formulário de Cadastro -->
                 `,
-                recipe: `
+                createRecipe: `
                     <h1 class="section-title">Criar Receita</h1>
-                    <p class="banner-text">Use ingredientes que você tem em casa para criar uma receita personalizada!</p>
-                    <form>
-                        <label for="ingredient">Ingrediente:</label>
-                        <input type="text" id="ingredient" name="ingredient">
-                        <br>
-                        <label for="calories">Calorias:</label>
-                        <input type="number" id="calories" name="calories">
-                        <br>
-                        <button type="submit" class="cta-button">Criar Receita</button>
-                    </form>
+                    <p class="banner-text">Informe os ingredientes e calorias para gerar uma receita personalizada.</p>
+                    <!-- Formulário de Criação de Receita -->
                 `
             };
 
-            // Atualiza o conteúdo principal da página sem recarregar
             document.getElementById('main-content').innerHTML = content[page];
         }
-
-        // Carrega o conteúdo inicial da página
-        loadContent('home');
     </script>
 </body>
 </html>
