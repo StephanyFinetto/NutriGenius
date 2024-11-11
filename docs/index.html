@@ -8,171 +8,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Custom CSS */
-        body {
-            font-size: 1em;
-            padding: 0;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        
-        /* Navbar */
-        nav {
-            background-color: #f8f9fa;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav img {
-            vertical-align: middle;
-        }
-
-        .navbar-collapse {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            font-size: 1em;
-            color: #333;
-            margin-left: 20px;
-        }
-
-        .nav-link:hover {
-            color: #004080;
-        }
-
-        /* Container principal */
-        .container-conteudo {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Título e conteúdo */
-        .section-title {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 2em;
-            color: #004080;
-            margin-bottom: 15px;
-            margin-top: 30px;
-        }
-
-        .banner-text {
-            font-size: 1em;
-            color: #555;
-            margin-bottom: 20px;
-            margin-top: 20px;
-        }
-
-        /* Imagem principal */
-        .main-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        /* Estilo para o botão CTA */
-        .cta-button {
-            background-color: #004080;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.2em;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            background-color: #002a5c;
-        }
-
-        /* Layout flexível para organizar o texto e a imagem */
-        .row {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .row {
-                flex-direction: row;
-            }
-
-            .col-md-6:first-child {
-                order: 1;
-                padding-right: 20px;
-            }
-
-            .col-md-6:last-child {
-                order: 2;
-                display: flex;
-                justify-content: flex-start;
-                padding: 0;
-                margin: 0;
-            }
-        }
-
-        /* Centralização */
-        .text-center {
-            text-align: center;
-        }
-
+        /* Seu CSS original */
     </style>
+    <script>
+        function carregarPagina(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('conteudo').innerHTML = html;
+                })
+                .catch(error => console.error('Erro ao carregar a página:', error));
+        }
+    </script>
 </head>
 <body>
     <nav>
-        <a href="index.html">
+        <a href="#" onclick="carregarPagina('index.html');">
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
         </a>
         <div class="navbar-collapse">
-            <a class="nav-link" href="#" onclick="loadContent('Login-Nutrigenius.html'); return false;">Login</a>
-            <a class="nav-link" href="#" onclick="loadContent('Cadastrar-se-Nutrigenius.html'); return false;">Criar conta</a>
-            <a class="nav-link" href="#" onclick="loadContent('Criar_receita.html'); return false;">Criar Receita</a>
+            <a class="nav-link" href="#" onclick="carregarPagina('Login-Nutrigenius.html')">Login</a>
+            <a class="nav-link" href="#" onclick="carregarPagina('Cadastrar-se-Nutrigenius.html')">Criar conta</a>
+            <a class="nav-link" href="#" onclick="carregarPagina('Criar_receita.html')">Criar Receita</a>
         </div>
     </nav>
 
-    <!-- Container onde as páginas serão carregadas dinamicamente -->
-    <div class="container-conteudo" id="main-content">
-        <div class="row">
-            <div class="col-md-6">
-                <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
-                <p class="banner-text">
-                    Nutrigenius é o aplicativo inovador que transforma sua experiência culinária
-                    em uma jornada de saúde e bem-estar. No mundo moderno, onde a correria do dia a dia muitas
-                    vezes nos impede de seguir uma dieta equilibrada, o Nutrigenius surge como uma solução
-                    prática e inteligente. Este aplicativo foi projetado para ajudar você a criar receitas
-                    saudáveis usando os ingredientes que você já tem em casa e dentro das calorias disponíveis
-                    em sua dieta.
-                </p>
-                <div class="text-center">
-                    <a class="cta-button" href="#" onclick="loadContent('Cadastrar-se-Nutrigenius.html'); return false;">Quero conhecer</a>
-                </div>
-            </div>
-
-            <div class="col-md-6 text-center">
-                <img class="main-image" src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/banner.jpg" alt="Imagem de Banner">
-            </div>
-        </div>
+    <!-- Div para carregar o conteúdo dinâmico -->
+    <div id="conteudo" class="container-conteudo">
+        <!-- Conteúdo inicial ou página padrão -->
+        <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
+        <p class="banner-text">
+            Nutrigenius é o aplicativo inovador que transforma sua experiência culinária
+            em uma jornada de saúde e bem-estar. No mundo moderno, onde a correria do dia a dia muitas
+            vezes nos impede de seguir uma dieta equilibrada, o Nutrigenius surge como uma solução
+            prática e inteligente. Este aplicativo foi projetado para ajudar você a criar receitas
+            saudáveis usando os ingredientes que você já tem em casa e dentro das calorias disponíveis
+            em sua dieta.
+        </p>
     </div>
-
-    <script>
-        // Função para carregar conteúdo dinamicamente no div main-content
-        function loadContent(page) {
-            fetch(page)
-                .then(response => {
-                    if (response.ok) return response.text();
-                    throw new Error("Erro ao carregar a página");
-                })
-                .then(content => {
-                    document.getElementById("main-content").innerHTML = content;
-                })
-                .catch(error => console.error(error));
-        }
-    </script>
 </body>
 </html>
