@@ -13,9 +13,9 @@
             font-size: 1em;
             padding: 0;
             margin: 0;
-            font-family: Arial, sans-serif; /* Fonte padrão para o corpo */
+            font-family: Arial, sans-serif;
         }
-
+        
         /* Navbar */
         nav {
             background-color: #f8f9fa;
@@ -36,10 +36,9 @@
 
         .nav-link {
             text-decoration: none;
-            font-size: 1em; /* Mesma fonte que o corpo do texto */
+            font-size: 1em;
             color: #333;
             margin-left: 20px;
-            font-family: Arial, sans-serif; /* Garantindo a mesma fonte dos textos */
         }
 
         .nav-link:hover {
@@ -59,22 +58,22 @@
             font-size: 2em;
             color: #004080;
             margin-bottom: 15px;
-            margin-top: 30px; /* Espaço extra acima do título */
+            margin-top: 30px;
         }
 
         .banner-text {
             font-size: 1em;
             color: #555;
-            margin-bottom: 20px; /* Margem abaixo do texto */
-            margin-top: 20px; /* Espaço extra acima do texto */
+            margin-bottom: 20px;
+            margin-top: 20px;
         }
 
         /* Imagem principal */
         .main-image {
-            width: 100%; /* Garante que a imagem ocupe toda a largura da coluna */
+            width: 100%;
             height: auto;
             border-radius: 10px;
-            object-fit: cover; /* Garante que a imagem seja cortada para preencher o espaço sem distorção */
+            object-fit: cover;
         }
 
         /* Estilo para o botão CTA */
@@ -95,79 +94,39 @@
         /* Layout flexível para organizar o texto e a imagem */
         .row {
             display: flex;
-            flex-direction: column; /* Empilha os itens para telas pequenas */
-            gap: 20px; /* Espaçamento entre as colunas */
+            flex-direction: column;
+            gap: 20px;
         }
 
-        /* Em telas maiores, exibe o texto à esquerda e a imagem à direita */
         @media (min-width: 768px) {
             .row {
-                flex-direction: row; /* Alinha os itens lado a lado */
+                flex-direction: row;
             }
 
             .col-md-6:first-child {
-                order: 1; /* Mantém o texto à esquerda */
-                padding-right: 20px; /* Adiciona um espaço à direita do texto */
+                order: 1;
+                padding-right: 20px;
             }
 
             .col-md-6:last-child {
-                order: 2; /* Mantém a imagem à direita */
+                order: 2;
                 display: flex;
-                justify-content: flex-start; /* Faz a imagem colar à direita */
-                padding: 0; /* Remove o padding */
-                margin: 0; /* Remove a margem */
+                justify-content: flex-start;
+                padding: 0;
+                margin: 0;
             }
         }
 
-        /* Estilos de centralização */
+        /* Centralização */
         .text-center {
             text-align: center;
         }
 
-        /* Layout Mobile First */
-        @media (min-width: 768px) {
-            .container-conteudo {
-                padding: 40px;
-            }
-
-            .section-title {
-                font-size: 2.5em;
-            }
-
-            .banner-text {
-                font-size: 1.1em;
-            }
-
-            .col-md-6 {
-                flex-basis: 50%;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container-conteudo {
-                padding: 60px;
-            }
-        }
     </style>
-    <script>
-        // Função para carregar conteúdo dinamicamente
-        function loadContent(page) {
-            fetch(page)
-                .then(response => {
-                    if (!response.ok) throw new Error("Erro ao carregar a página.");
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById("main-content").innerHTML = data;
-                })
-                .catch(error => console.error("Erro:", error));
-        }
-    </script>
 </head>
 <body>
     <nav>
-        <!-- Transformando a imagem em link para a página index.html -->
-        <a href="index.html" onclick="loadContent('index.html'); return false;">
+        <a href="index.html">
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
         </a>
         <div class="navbar-collapse">
@@ -177,10 +136,9 @@
         </div>
     </nav>
 
-    <!-- Contêiner principal onde o conteúdo será carregado -->
-    <div id="main-content" class="container-conteudo">
+    <!-- Container onde as páginas serão carregadas dinamicamente -->
+    <div class="container-conteudo" id="main-content">
         <div class="row">
-            <!-- Texto -->
             <div class="col-md-6">
                 <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
                 <p class="banner-text">
@@ -196,11 +154,25 @@
                 </div>
             </div>
 
-            <!-- Imagem -->
             <div class="col-md-6 text-center">
                 <img class="main-image" src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/banner.jpg" alt="Imagem de Banner">
             </div>
         </div>
     </div>
+
+    <script>
+        // Função para carregar conteúdo dinamicamente no div main-content
+        function loadContent(page) {
+            fetch(page)
+                .then(response => {
+                    if (response.ok) return response.text();
+                    throw new Error("Erro ao carregar a página");
+                })
+                .then(content => {
+                    document.getElementById("main-content").innerHTML = content;
+                })
+                .catch(error => console.error(error));
+        }
+    </script>
 </body>
 </html>
