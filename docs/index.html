@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página inicial - Nutrigenius</title>
+    <title>NutriGenius - Home</title>
     <link rel="icon" type="image/x-icon" href="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-colorido.svg">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Custom CSS */
         body {
             font-size: 1em;
             padding: 0;
             margin: 0;
-            font-family: Arial, sans-serif; /* Fonte padrão para o corpo */
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
         }
 
         /* Navbar */
@@ -36,163 +36,108 @@
 
         .nav-link {
             text-decoration: none;
-            font-size: 1em; /* Mesma fonte que o corpo do texto */
+            font-size: 1em;
             color: #333;
             margin-left: 20px;
-            font-family: Arial, sans-serif; /* Garantindo a mesma fonte dos textos */
+            font-family: Arial, sans-serif;
         }
 
         .nav-link:hover {
             color: #004080;
         }
 
-        /* Container principal */
+        /* Container */
         .container-conteudo {
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Título e conteúdo */
         .section-title {
             font-family: 'Luckiest Guy', cursive;
-            font-size: 2em;
+            font-size: 2.5em;
             color: #004080;
-            margin-bottom: 15px;
-            margin-top: 30px; /* Espaço extra acima do título */
+            margin-bottom: 20px;
         }
 
-        .banner-text {
-            font-size: 1em;
-            color: #555;
-            margin-bottom: 20px; /* Margem abaixo do texto */
-            margin-top: 20px; /* Espaço extra acima do texto */
-        }
-
-        /* Imagem principal */
-        .main-image {
-            width: 100%; /* Garante que a imagem ocupe toda a largura da coluna */
-            height: auto;
+        /* Form container */
+        .form-container {
+            background-color: white;
             border-radius: 10px;
-            object-fit: cover; /* Garante que a imagem seja cortada para preencher o espaço sem distorção */
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Estilo para o botão CTA */
-        .cta-button {
+        .form-container label {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
             background-color: #004080;
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
             font-size: 1.2em;
-            display: inline-block;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .cta-button:hover {
+        button:hover {
             background-color: #002a5c;
         }
 
-        /* Layout flexível para organizar o texto e a imagem */
-        .row {
+        .d-flex {
             display: flex;
-            flex-direction: column; /* Empilha os itens para telas pequenas */
-            gap: 20px; /* Espaçamento entre as colunas */
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
         }
 
-        /* Em telas maiores, exibe o texto à esquerda e a imagem à direita */
-        @media (min-width: 768px) {
-            .row {
-                flex-direction: row; /* Alinha os itens lado a lado */
-            }
-
-            .col-md-6:first-child {
-                order: 1; /* Mantém o texto à esquerda */
-                padding-right: 20px; /* Adiciona um espaço à direita do texto */
-            }
-
-            .col-md-6:last-child {
-                order: 2; /* Mantém a imagem à direita */
-                display: flex;
-                justify-content: flex-start; /* Faz a imagem colar à direita */
-                padding: 0; /* Remove o padding */
-                margin: 0; /* Remove a margem */
-            }
+        .d-flex .btn {
+            margin: 0 10px;
         }
 
-        /* Estilos de centralização */
-        .text-center {
-            text-align: center;
-        }
-
-        /* Layout Mobile First */
-        @media (min-width: 768px) {
-            .container-conteudo {
-                padding: 40px;
-            }
-
-            .section-title {
-                font-size: 2.5em;
-            }
-
-            .banner-text {
-                font-size: 1.1em;
-            }
-
-            .col-md-6 {
-                flex-basis: 50%;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container-conteudo {
-                padding: 60px;
-            }
-        }
     </style>
 </head>
 <body>
     <nav>
-        <!-- Transformando a imagem em link para a página index.html -->
+        <!-- Logotipo com link dinâmico -->
         <a href="#" onclick="carregarPagina('index.html')">
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
         </a>
         <div class="navbar-collapse">
-            <a class="nav-link" href="#" onclick="carregarPagina('Login-Nutrigenius.html')">Login</a>
-            <a class="nav-link" href="#" onclick="carregarPagina('Cadastrar-se-Nutrigenius.html')">Criar conta</a>
-            <a class="nav-link" href="#" onclick="carregarPagina('Criar_receita.html')">Criar Receita</a>
+            <a class="nav-link" href="#" onclick="carregarPagina('Ver-Receita.html')">Receitas</a>
+            <a class="nav-link" href="#" onclick="carregarPagina('Criar-Receita.html')">Criar Receita</a>
+            <a class="nav-link" href="#" onclick="carregarPagina('index.html')">Sair</a>
         </div>
     </nav>
 
     <div class="container-conteudo" id="conteudo">
-        <!-- Conteúdo será carregado aqui dinamicamente -->
-        <div class="row">
-            <!-- Texto -->
-            <div class="col-md-6">
-                <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
-                <p class="banner-text">
-                    Nutrigenius é o aplicativo inovador que transforma sua experiência culinária
-                    em uma jornada de saúde e bem-estar. No mundo moderno, onde a correria do dia a dia muitas
-                    vezes nos impede de seguir uma dieta equilibrada, o Nutrigenius surge como uma solução
-                    prática e inteligente. Este aplicativo foi projetado para ajudar você a criar receitas
-                    saudáveis usando os ingredientes que você já tem em casa e dentro das calorias disponíveis
-                    em sua dieta.
-                </p>
-                <div class="text-center">
-                    <a class="cta-button" href="#" onclick="carregarPagina('Cadastrar-se-Nutrigenius.html')">Quero conhecer</a>
-                </div>
-            </div>
-
-            <!-- Imagem -->
-            <div class="col-md-6 text-center">
-                <img class="main-image" src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/banner.jpg" alt="Imagem de Banner">
-            </div>
-        </div>
+        <!-- Conteúdo dinâmico será carregado aqui -->
     </div>
 
     <script>
+        // Função para carregar conteúdo de uma página via fetch
         function carregarPagina(pagina) {
             const conteudo = document.getElementById("conteudo");
 
+            // Altera a URL no navegador
+            history.pushState(null, '', pagina);
+
+            // Carrega a página dinâmica via fetch
             fetch(pagina)
                 .then(response => response.text())
                 .then(html => {
@@ -200,6 +145,14 @@
                 })
                 .catch(error => console.error('Erro ao carregar a página:', error));
         }
+
+        // Detecta mudanças no histórico (quando o usuário usa o botão voltar)
+        window.onpopstate = function() {
+            carregarPagina(location.pathname); // Recarrega a página atual
+        };
+
+        // Carrega a página inicial ao abrir
+        carregarPagina('index.html');
     </script>
 </body>
 </html>
