@@ -1,131 +1,46 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Receita - Nutrigenius</title>
-    <link rel="icon" type="image/x-icon" href="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-colorido.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        /* Custom CSS */
-        body {
-            font-size: 1em;
-            padding: 0;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
+<div class="container-conteudo">
+    <div class="form-container">
+        <form method="POST" action="Criar_receita.html">
+            <input id="csrf_token" name="csrf_token" type="hidden" value="TOKEN_AQUI">
+            <fieldset>
+                <legend>Criar Receita</legend>
 
-        .container-conteudo {
-            padding: 20px;
-            max-width: 500px;
-            margin: 20px auto;
-        }
-
-        .form-container {
-            background-color: white;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        legend {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 2em;
-            color: #004080;
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input[type="text"],
-        input[type="number"] {
-            width: 90%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            font-size: 1em;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #004080;
-            color: white;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #002a5c;
-        }
-
-        .d-flex {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .d-flex .btn {
-            margin: 0 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container-conteudo">
-        <div class="form-container">
-            <form method="POST" action="Criar_receita.html">
-                <input id="csrf_token" name="csrf_token" type="hidden" value="TOKEN_AQUI">
-                <fieldset>
-                    <legend>Criar Receita</legend>
-
-                    <!-- Ingredientes -->
-                    <div id="ingredientes-list">
-                        <div class="form-group">
-                            <label for="ingredientes-0">Ingrediente 1</label>
-                            <input id="ingredientes-0" name="ingredientes-0" type="text" placeholder="Digite o ingrediente">
-                        </div>
-                        <div class="form-group">
-                            <label for="ingredientes-1">Ingrediente 2</label>
-                            <input id="ingredientes-1" name="ingredientes-1" type="text" placeholder="Digite o ingrediente">
-                        </div>
-                        <div class="form-group">
-                            <label for="ingredientes-2">Ingrediente 3</label>
-                            <input id="ingredientes-2" name="ingredientes-2" type="text" placeholder="Digite o ingrediente">
-                        </div>
-                        <div class="form-group">
-                            <label for="ingredientes-3">Ingrediente 4</label>
-                            <input id="ingredientes-3" name="ingredientes-3" type="text" placeholder="Digite o ingrediente">
-                        </div>
-                    </div>
-
-                    <!-- Calorias -->
+                <!-- Ingredientes -->
+                <div id="ingredientes-list">
                     <div class="form-group">
-                        <label for="calorias">Calorias</label>
-                        <input class="form-control" id="calorias" name="calorias" type="number" step="any" min="0" required placeholder="Digite as calorias">
+                        <label for="ingredientes-0">Ingrediente 1</label>
+                        <input id="ingredientes-0" name="ingredientes-0" type="text" placeholder="Digite o ingrediente">
                     </div>
+                    <div class="form-group">
+                        <label for="ingredientes-1">Ingrediente 2</label>
+                        <input id="ingredientes-1" name="ingredientes-1" type="text" placeholder="Digite o ingrediente">
+                    </div>
+                    <div class="form-group">
+                        <label for="ingredientes-2">Ingrediente 3</label>
+                        <input id="ingredientes-2" name="ingredientes-2" type="text" placeholder="Digite o ingrediente">
+                    </div>
+                    <div class="form-group">
+                        <label for="ingredientes-3">Ingrediente 4</label>
+                        <input id="ingredientes-3" name="ingredientes-3" type="text" placeholder="Digite o ingrediente">
+                    </div>
+                </div>
 
-                    <!-- Botão de submissão -->
-                    <button class="btn btn-primary mt-4" type="submit">Gerar Receita</button>
-                </fieldset>
-            </form>
+                <!-- Calorias -->
+                <div class="form-group">
+                    <label for="calorias">Calorias</label>
+                    <input class="form-control" id="calorias" name="calorias" type="number" step="any" min="0" required placeholder="Digite as calorias">
+                </div>
 
-            <!-- Botões para adicionar/remover ingredientes -->
-            <div class="d-flex align-items-center gap-2 my-4">
-                <a href="#" class="btn btn-secondary"><i class="fa-solid fa-minus"></i></a>
-                <p class="mb-0">4 ingredientes</p>
-                <a href="#" class="btn btn-secondary"><i class="fa-solid fa-plus"></i></a>
-            </div>
+                <!-- Botão de submissão -->
+                <button class="btn btn-primary mt-4" type="submit">Gerar Receita</button>
+            </fieldset>
+        </form>
+
+        <!-- Botões para adicionar/remover ingredientes -->
+        <div class="d-flex align-items-center gap-2 my-4">
+            <a href="#" class="btn btn-secondary"><i class="fa-solid fa-minus"></i></a>
+            <p class="mb-0">4 ingredientes</p>
+            <a href="#" class="btn btn-secondary"><i class="fa-solid fa-plus"></i></a>
         </div>
     </div>
-</body>
-</html>
+</div>
