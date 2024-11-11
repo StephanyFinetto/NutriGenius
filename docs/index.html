@@ -8,14 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Mantendo o CSS original conforme solicitado */
+        /* Custom CSS */
         body {
             font-size: 1em;
             padding: 0;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif; /* Fonte padrão para o corpo */
         }
 
+        /* Navbar */
         nav {
             background-color: #f8f9fa;
             padding: 10px 20px;
@@ -35,44 +36,48 @@
 
         .nav-link {
             text-decoration: none;
-            font-size: 1em;
+            font-size: 1em; /* Mesma fonte que o corpo do texto */
             color: #333;
             margin-left: 20px;
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif; /* Garantindo a mesma fonte dos textos */
         }
 
         .nav-link:hover {
             color: #004080;
         }
 
+        /* Container principal */
         .container-conteudo {
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        /* Título e conteúdo */
         .section-title {
             font-family: 'Luckiest Guy', cursive;
             font-size: 2em;
             color: #004080;
             margin-bottom: 15px;
-            margin-top: 30px;
+            margin-top: 30px; /* Espaço extra acima do título */
         }
 
         .banner-text {
             font-size: 1em;
             color: #555;
-            margin-bottom: 20px;
-            margin-top: 20px;
+            margin-bottom: 20px; /* Margem abaixo do texto */
+            margin-top: 20px; /* Espaço extra acima do texto */
         }
 
+        /* Imagem principal */
         .main-image {
-            width: 100%;
+            width: 100%; /* Garante que a imagem ocupe toda a largura da coluna */
             height: auto;
             border-radius: 10px;
-            object-fit: cover;
+            object-fit: cover; /* Garante que a imagem seja cortada para preencher o espaço sem distorção */
         }
 
+        /* Estilo para o botão CTA */
         .cta-button {
             background-color: #004080;
             color: white;
@@ -87,35 +92,39 @@
             background-color: #002a5c;
         }
 
+        /* Layout flexível para organizar o texto e a imagem */
         .row {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            flex-direction: column; /* Empilha os itens para telas pequenas */
+            gap: 20px; /* Espaçamento entre as colunas */
         }
 
+        /* Em telas maiores, exibe o texto à esquerda e a imagem à direita */
         @media (min-width: 768px) {
             .row {
-                flex-direction: row;
+                flex-direction: row; /* Alinha os itens lado a lado */
             }
 
             .col-md-6:first-child {
-                order: 1;
-                padding-right: 20px;
+                order: 1; /* Mantém o texto à esquerda */
+                padding-right: 20px; /* Adiciona um espaço à direita do texto */
             }
 
             .col-md-6:last-child {
-                order: 2;
+                order: 2; /* Mantém a imagem à direita */
                 display: flex;
-                justify-content: flex-start;
-                padding: 0;
-                margin: 0;
+                justify-content: flex-start; /* Faz a imagem colar à direita */
+                padding: 0; /* Remove o padding */
+                margin: 0; /* Remove a margem */
             }
         }
 
+        /* Estilos de centralização */
         .text-center {
             text-align: center;
         }
 
+        /* Layout Mobile First */
         @media (min-width: 768px) {
             .container-conteudo {
                 padding: 40px;
@@ -140,23 +149,38 @@
             }
         }
     </style>
+    <script>
+        // Função para carregar conteúdo dinamicamente
+        function loadContent(page) {
+            fetch(page)
+                .then(response => {
+                    if (!response.ok) throw new Error("Erro ao carregar a página.");
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById("main-content").innerHTML = data;
+                })
+                .catch(error => console.error("Erro:", error));
+        }
+    </script>
 </head>
 <body>
-
     <nav>
-        <a href="#" onclick="loadContent('home')">
+        <!-- Transformando a imagem em link para a página index.html -->
+        <a href="index.html" onclick="loadContent('index.html'); return false;">
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
         </a>
         <div class="navbar-collapse">
-            <a class="nav-link" href="#" onclick="loadContent('login.html')">Login</a>
-            <a class="nav-link" href="#" onclick="loadContent('signup.html')">Criar conta</a>
-            <a class="nav-link" href="#" onclick="loadContent('createRecipe.html')">Criar Receita</a>
+            <a class="nav-link" href="#" onclick="loadContent('Login-Nutrigenius.html'); return false;">Login</a>
+            <a class="nav-link" href="#" onclick="loadContent('Cadastrar-se-Nutrigenius.html'); return false;">Criar conta</a>
+            <a class="nav-link" href="#" onclick="loadContent('Criar_receita.html'); return false;">Criar Receita</a>
         </div>
     </nav>
 
+    <!-- Contêiner principal onde o conteúdo será carregado -->
     <div id="main-content" class="container-conteudo">
-        <!-- Conteúdo da página principal carregado inicialmente -->
         <div class="row">
+            <!-- Texto -->
             <div class="col-md-6">
                 <h1 class="section-title">Bem-vindo ao Nutrigenius!</h1>
                 <p class="banner-text">
@@ -168,29 +192,15 @@
                     em sua dieta.
                 </p>
                 <div class="text-center">
-                    <a class="cta-button" href="#" onclick="loadContent('signup.html')">Quero conhecer</a>
+                    <a class="cta-button" href="#" onclick="loadContent('Cadastrar-se-Nutrigenius.html'); return false;">Quero conhecer</a>
                 </div>
             </div>
+
+            <!-- Imagem -->
             <div class="col-md-6 text-center">
                 <img class="main-image" src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/banner.jpg" alt="Imagem de Banner">
             </div>
         </div>
     </div>
-
-    <!-- Script de navegação com AJAX -->
-    <script>
-        function loadContent(page) {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', page, true);
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    document.getElementById('main-content').innerHTML = xhr.responseText;
-                } else {
-                    console.error('Erro ao carregar o conteúdo da página:', xhr.status);
-                }
-            };
-            xhr.send();
-        }
-    </script>
 </body>
 </html>
