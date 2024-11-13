@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbname = 'nutrigenius';
-$username = 'root'; // Troque conforme seu usuário de banco de dados
-$password = ''; // Troque conforme sua senha
+$username = 'root'; // usuário de banco de dados
+$password = ''; // senha 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
