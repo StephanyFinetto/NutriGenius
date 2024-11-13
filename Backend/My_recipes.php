@@ -1,24 +1,19 @@
 <?php
-session_start();
-include('db.php');
-
-if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
-
-    // Recupera as receitas do usuário
-    $stmt = $pdo->prepare("SELECT * FROM recipes WHERE user_id = ?");
-    $stmt->execute([$user_id]);
-    $recipes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    if ($recipes) {
-        echo "<h1>Minhas Receitas</h1>";
-        echo "<ul>";
-        foreach ($recipes as $recipe) {
-            echo "<li><a href='#'>{$recipe['name']}</a></li>";
-        }
-        echo "</ul>";
-    } else {
-        echo "Você ainda não tem receitas cadastradas.";
-    }
+// Conectar ao banco de dados
+$dsn = 'sqlite:../database/nutrigenius.db';
+try {
+    $db = new PDO($dsn);
+} catch (PDOException $e) {
+    echo "Erro ao conectar: " . $e->getMessage();
+    exit;
 }
+
+// Buscar receitas no banco de dados
+$query = "SELECT * FROM recipes";
+$stmt = $db->query($query);
+$recipes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Retornar as receitas
+echo json_encode($recipes);
 ?>
+
