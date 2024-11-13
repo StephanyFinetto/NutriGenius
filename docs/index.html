@@ -8,12 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Custom CSS */
         body {
             font-size: 1em;
             padding: 0;
             margin: 0;
-            font-family: Arial, sans-serif; /* Fonte padrão para o corpo */
+            font-family: Arial, sans-serif;
         }
 
         /* Navbar */
@@ -49,7 +48,7 @@
         /* Container principal */
         .container-conteudo {
             padding: 20px;
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -60,6 +59,7 @@
             color: #004080;
             margin-bottom: 15px;
             margin-top: 30px;
+            text-align: center;
         }
 
         .banner-text {
@@ -73,72 +73,15 @@
         .cta-button {
             background-color: #004080;
             color: white;
-            padding: 10px 16px; /* Botão mais compacto */
+            padding: 10px 16px;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 1em; /* Reduzi o tamanho da fonte */
+            font-size: 1em;
             display: inline-block;
-            width: auto;
         }
 
         .cta-button:hover {
             background-color: #002a5c;
-        }
-
-        /* Layout flexível para organizar o texto e a imagem */
-        .row {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .row {
-                flex-direction: row;
-            }
-
-            .col-md-6:first-child {
-                order: 1;
-                padding-right: 20px;
-            }
-
-            .col-md-6:last-child {
-                order: 2;
-                display: flex;
-                justify-content: flex-start;
-                padding: 0;
-                margin: 0;
-            }
-        }
-
-        /* Estilos de centralização */
-        .text-center {
-            text-align: center;
-        }
-
-        /* Layout Mobile First */
-        @media (min-width: 768px) {
-            .container-conteudo {
-                padding: 40px;
-            }
-
-            .section-title {
-                font-size: 2.5em;
-            }
-
-            .banner-text {
-                font-size: 1.1em;
-            }
-
-            .col-md-6 {
-                flex-basis: 50%;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container-conteudo {
-                padding: 60px;
-            }
         }
 
         /* Form container */
@@ -147,28 +90,45 @@
             border-radius: 10px;
             padding: 30px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .form-container label {
-            font-size: 1em;
-            margin-bottom: 10px;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            color: #333;
+            display: block;
         }
 
-        input[type="text"], input[type="number"] {
-            width: 90%;
-            padding: 8px; /* Padding reduzido */
-            margin-bottom: 15px;
+        input[type="text"], input[type="password"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
+            border-color: #004080;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 64, 128, 0.3);
         }
 
         button {
-            width: auto; /* Botão ajusta-se ao conteúdo */
-            padding: 10px 16px; /* Padding reduzido */
+            width: 100%;
+            padding: 12px;
             background-color: #004080;
             color: white;
-            font-size: 1em; /* Tamanho da fonte reduzido */
+            font-size: 1.1em;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -180,15 +140,9 @@
             background-color: #002a5c;
         }
 
-        .d-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-        }
-
-        .d-flex .btn {
-            margin: 0 8px; /* Margem reduzida entre botões */
+        /* Estilos de centralização */
+        .text-center {
+            text-align: center;
         }
     </style>
 </head>
@@ -206,6 +160,7 @@
     </nav>
 
     <div id="main-content" class="container-conteudo">
+        <!-- Conteúdo dinâmico -->
     </div>
 
     <script>
@@ -221,9 +176,6 @@
                                 <div class="text-center">
                                     <a class="cta-button" href="#" onclick="loadContent('signup'); return false;">Quero conhecer</a>
                                 </div>
-                            </div>
-                            <div class="col-md-6 text-center">
-                                <img class="main-image" src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/banner.jpg" alt="Imagem de Banner">
                             </div>
                         </div>
                     `;
