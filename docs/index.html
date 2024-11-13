@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* Custom CSS */
         body {
             font-size: 1em;
             padding: 0;
@@ -22,15 +23,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        nav img {
-            vertical-align: middle;
-        }
-
-        .navbar-collapse {
-            display: flex;
-            justify-content: flex-end;
         }
 
         .nav-link {
@@ -48,7 +40,7 @@
         /* Container principal */
         .container-conteudo {
             padding: 20px;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -59,24 +51,22 @@
             color: #004080;
             margin-bottom: 15px;
             margin-top: 30px;
-            text-align: center;
         }
 
         .banner-text {
             font-size: 1em;
             color: #555;
-            margin-bottom: 20px;
-            margin-top: 20px;
+            margin: 20px 0;
         }
 
-        /* Estilo para o botão CTA */
+        /* Botão CTA */
         .cta-button {
             background-color: #004080;
             color: white;
-            padding: 10px 16px;
+            padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 1em;
+            font-size: 1.2em;
             display: inline-block;
         }
 
@@ -88,61 +78,61 @@
         .form-container {
             background-color: white;
             border-radius: 10px;
-            padding: 30px;
+            padding: 40px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 20px auto;
-        }
-
-        .form-container h1 {
-            text-align: center;
-            margin-bottom: 20px;
         }
 
         .form-container label {
-            font-size: 0.95em;
-            margin-bottom: 5px;
-            color: #333;
-            display: block;
+            font-size: 1em;
+            margin-bottom: 10px;
         }
 
-        input[type="text"], input[type="password"], input[type="number"] {
-            width: 100%;
+        input[type="text"], input[type="number"], input[type="password"] {
+            width: calc(100% - 20px);
             padding: 10px;
-            margin: 10px 0 20px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            transition: border-color 0.3s;
         }
 
-        input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
-            border-color: #004080;
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 64, 128, 0.3);
-        }
-
+        /* Estilo uniforme para todos os botões de formulário */
         button {
             width: 100%;
             padding: 12px;
             background-color: #004080;
             color: white;
-            font-size: 1.1em;
+            font-size: 1.2em;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
-            margin-top: 10px;
         }
 
         button:hover {
             background-color: #002a5c;
         }
 
-        /* Estilos de centralização */
-        .text-center {
-            text-align: center;
+        /* Estilos de flexbox para centralizar os botões em cada formulário */
+        .d-flex {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Layout responsivo */
+        .row {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .row {
+                flex-direction: row;
+            }
         }
     </style>
 </head>
@@ -159,8 +149,9 @@
         </div>
     </nav>
 
+    <!-- Container para conteúdo dinâmico -->
     <div id="main-content" class="container-conteudo">
-        <!-- Conteúdo dinâmico -->
+        <!-- O conteúdo das páginas será carregado aqui -->
     </div>
 
     <script>
@@ -177,6 +168,9 @@
                                     <a class="cta-button" href="#" onclick="loadContent('signup'); return false;">Quero conhecer</a>
                                 </div>
                             </div>
+                            <div class="col-md-6 text-center">
+                                <img class="main-image" src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/banner.jpg" alt="Imagem de Banner">
+                            </div>
                         </div>
                     `;
                     break;
@@ -191,22 +185,6 @@
                                 <input type="text" id="ingredients" name="ingredients">
                                 <button type="submit">Criar Receita</button>
                             </form>
-                        </div>
-                    `;
-                    break;
-                case 'my-recipes':
-                    content.innerHTML = `
-                        <div class="container-conteudo">
-                            <h1>Minhas Receitas</h1>
-                            <div class="card">
-                                <h5 class="card-header">Receitas Cadastradas</h5>
-                                <div class="card-body">
-                                    <ul>
-                                        <li><a class="recipe-link" href="#">Salada Energética com Salsinha</a></li>
-                                        <li><a class="recipe-link" href="#">Pão Integral de Aveia</a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     `;
                     break;
