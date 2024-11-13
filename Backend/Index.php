@@ -3,10 +3,9 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Iniciar a sessão (se necessário para seu projeto)
 session_start();
 
-// Configurações do banco de dados (SQLite ou PostgreSQL)
+// Configurações banco de dados do projeto
 $host = '127.0.0.1';
 $dbname = 'nutrigenius';
 
@@ -23,7 +22,7 @@ try {
 
 header('Content-Type: application/json');
 
-//  tipo de requisição foi feita
+// Qual requisição foi feita
 $request_method = $_SERVER['REQUEST_METHOD'];
 
 // Roteamento de requisições
