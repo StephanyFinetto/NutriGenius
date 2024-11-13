@@ -96,22 +96,32 @@
         button:hover {
             background-color: #002a5c;
         }
+
+        /* Ocultar todas as páginas inicialmente */
+        .pagina {
+            display: none;
+        }
+
+        /* Página visível */
+        .pagina-ativa {
+            display: block;
+        }
     </style>
 </head>
 <body>
     <!-- Navegação -->
     <nav>
-        <a href="#" onclick="carregarPagina('index.html')">
+        <a href="#" onclick="exibirPagina('index')">
             <img src="https://github.com/StephanyFinetto/NutriGenius/raw/main/docs/nutrigenius-vazado-preto.svg" width="40" alt="Logotipo da Nutrigenius">
         </a>
         <div class="navbar-collapse">
-            <a class="nav-link" href="#" onclick="carregarPagina('MinhasReceitas.html')">Receitas</a>
-            <a class="nav-link" href="#" onclick="carregarPagina('index.html')">Sair</a>
+            <a class="nav-link" href="#" onclick="exibirPagina('receitas')">Receitas</a>
+            <a class="nav-link" href="#" onclick="exibirPagina('index')">Sair</a>
         </div>
     </nav>
 
-    <!-- Conteúdo dinâmico -->
-    <div id="conteudo" class="container-conteudo">
+    <!-- Página inicial -->
+    <div id="index" class="pagina pagina-ativa container-conteudo">
         <h1 class="section-title">Criar Receita</h1>
 
         <div class="form-container">
@@ -131,25 +141,28 @@
         </div>
     </div>
 
+    <!-- Página de Minhas Receitas -->
+    <div id="receitas" class="pagina container-conteudo">
+        <h1 class="section-title">Minhas Receitas</h1>
+        <p>Exibir a lista de receitas do usuário aqui...</p>
+        <!-- Aqui você pode adicionar elementos para exibir as receitas -->
+    </div>
+
     <script>
-        function carregarPagina(pagina) {
-            const conteudo = document.getElementById("conteudo");
+        // Função para exibir a página selecionada e esconder as outras
+        function exibirPagina(paginaId) {
+            // Ocultar todas as páginas
+            const paginas = document.querySelectorAll('.pagina');
+            paginas.forEach(pagina => {
+                pagina.classList.remove('pagina-ativa');
+            });
 
-            history.pushState(null, '', pagina);
-
-            fetch(pagina)
-                .then(response => response.text())
-                .then(html => {
-                    conteudo.innerHTML = html;
-                })
-                .catch(error => console.error('Erro ao carregar a página:', error));
+            // Exibir a página selecionada
+            document.getElementById(paginaId).classList.add('pagina-ativa');
         }
 
-        window.onpopstate = function() {
-            carregarPagina(location.pathname);
-        };
-
-        carregarPagina('index.html');
+        // Carrega a página inicial
+        exibirPagina('index');
     </script>
 </body>
 </html>
