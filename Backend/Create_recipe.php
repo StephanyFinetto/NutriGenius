@@ -1,16 +1,21 @@
 <?php
-session_start();
-include('db.php');
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
-    $name = $_POST['recipe-name'];
-    $ingredients = $_POST['ingredients'];
-
-    // Insere a receita no banco
-    $stmt = $pdo->prepare("INSERT INTO recipes (user_id, name, ingredients) VALUES (?, ?, ?)");
-    $stmt->execute([$user_id, $name, $ingredients]);
-
-    echo "Receita cadastrada com sucesso!";
+// Conectar ao banco de dados
+$dsn = 'sqlite:../database/nutrigenius.db';
+try {
+    $db = new PDO($dsn);
+} catch (PDOException $e) {
+    echo "Erro ao conectar: " . $e->getMessage();
+    exit;
 }
+
+// Receber dados JSON
+$data = json_decode(file_get_contents("php://input"), true);
+
+// Inserir no banco de dados
+$query = "INSERT INTO recipes (name, description, ingredients, instructions) VALUES (?, ?, ?, ?)";
+$stmt = $db->prepare($query);
+$stmt->execute([$data['name'], $data['description'], $data['ingredients'], $data['instructions']]);
+
+// Retornar a resposta
+echo json_encode(["message" => "Receita criada com sucesso!"]);
 ?>
