@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "nutrugenius",
+            "database": "database/nutrigenius.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
