@@ -8,8 +8,14 @@ $host = '127.0.0.1';
 $dbname = 'nutrigenius';
 
 try {
-    // Conexão com o banco de dados
-    $pdo = new PDO("sqlite:database/nutrigenius.db"); 
+
+    $dbPath = _DIR_ . '/database/nutrigenius.db';
+
+    if (!file_exists($dbPath)) {
+        throw new PDOException('O banco de dados SQLite não foi encontrado!');
+    }
+
+    $pdo = new PDO("sqlite:$dbPath");
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -22,7 +28,6 @@ header('Content-Type: application/json');
 
 $request_method = $_SERVER['REQUEST_METHOD'];
 
-// Roteamento de requisições
 switch ($request_method) {
     case 'GET':
         if (isset($_GET['id'])) {
@@ -44,4 +49,4 @@ switch ($request_method) {
         echo json_encode(['message' => 'Método não suportado']);
         break;
 }
-
+?>
