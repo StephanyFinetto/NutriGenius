@@ -157,7 +157,7 @@
     <script>
         function loadContent(page) {
             const domain = document.domain;
-            const pageUrl = `https://${domain}/${page}.html`;
+            const pageUrl = `https://${domain}/NutriGenius/${page}.html`;
             fetch(pageUrl, { method: 'get' })
                 .then(response => response.text())
                 .then(contentHtml => {
